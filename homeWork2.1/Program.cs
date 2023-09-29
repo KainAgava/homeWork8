@@ -10,28 +10,29 @@ namespace homeWork2._1
     internal class Program
     {
         static void Main(string[] args)
-        {
-            Random rand = new Random();
-            int valeu = rand.Next(1, 1000);
-            Console.WriteLine("случайная генерация числе, когда надоест введите exit ");
+        Random random = new Random();
+            int valeu = random.Next(0, 99999);
+            string exitCommand = "exit";
+            Console.WriteLine($"случайная генерация числе, когда надоест введите {exitCommand} ");
             Console.WriteLine($"например {valeu}, можете попробовать угадать следующее число ");
             string userUnput = Console.ReadLine();
-            string exit =  "exit";
 
-            while (exit != userUnput)
-                if (exit == userUnput)
+            while (exitCommand != userUnput)
+            {
+                if (exitCommand == userUnput)
                 {
-                    Console.WriteLine(exit);
-                    break;
+                    Console.WriteLine("Выход");
                 }
                 else
                 {
-                    valeu = rand.Next(1, 1000);
+                    valeu = random.Next(0, 99999);
                     Console.WriteLine(valeu);
                     Console.WriteLine("Какое число будет следующим? ");
                     userUnput = Console.ReadLine();
                 }
+            }
         }
+    }
     }
     
 }
