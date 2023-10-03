@@ -9,12 +9,15 @@ namespace homeWork2._1
 {
     internal class Program
     {
-        static void Main(string[] args)
-        Random random = new Random();
-            int valeu = random.Next(0, 99999);
+       static void Main(string[] args)
+        {
+            Random random = new Random();
+            int randomNumberMin = 0;
+            int randomNumberMax = 99999;
+            int value = random.Next(randomNumberMin, randomNumberMax);
             string exitCommand = "exit";
             Console.WriteLine($"случайная генерация числе, когда надоест введите {exitCommand} ");
-            Console.WriteLine($"например {valeu}, можете попробовать угадать следующее число ");
+            Console.WriteLine($"например {value}, можете попробовать угадать следующее число ");
             string userUnput = Console.ReadLine();
 
             while (exitCommand != userUnput)
@@ -25,14 +28,13 @@ namespace homeWork2._1
                 }
                 else
                 {
-                    valeu = random.Next(0, 99999);
-                    Console.WriteLine(valeu);
+                    value = random.Next(randomNumberMin, randomNumberMax);
+                    Console.WriteLine(value);
                     Console.WriteLine("Какое число будет следующим? ");
                     userUnput = Console.ReadLine();
                 }
             }
         }
-    }
     }
     
 }
